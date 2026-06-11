@@ -34,15 +34,15 @@ export default function Navbar({
         <div className="flex justify-between h-16 items-center">
           {/* Logo & Slogan */}
           <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5 cursor-pointer" onClick={() => { onSearchChange(''); onCityChange(CITIES[0]); }}>
-              <div className="aspect-square bg-gradient-to-tr from-blue-600 to-indigo-700 h-9 rounded-xl flex items-center justify-center shadow-md shadow-blue-500/10">
-                <span className="text-white font-bold text-lg tracking-wider font-mono">D</span>
+            <div className="group flex items-center gap-2 cursor-pointer transition-all active:scale-95" onClick={() => { onSearchChange(''); onCityChange(CITIES[0]); }}>
+              <div className="aspect-square bg-gradient-to-tr from-blue-600 to-indigo-700 h-10 rounded-[14px] flex items-center justify-center shadow-lg shadow-blue-600/20 group-hover:shadow-blue-600/40 group-hover:scale-105 transition-all">
+                <span className="text-white font-black text-xl tracking-wider font-mono">D</span>
               </div>
-              <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-blue-700 via-indigo-800 to-orange-600 bg-clip-text text-transparent">
+              <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-blue-700 via-indigo-800 to-orange-600 bg-clip-text text-transparent">
                 DialLocal
               </span>
             </div>
-            <span className="hidden md:inline-block text-xs font-medium text-slate-400 bg-slate-100 px-2 py-1 rounded-md">
+            <span className="hidden md:inline-block text-[10px] font-black tracking-widest uppercase text-slate-400 bg-slate-100/80 px-2.5 py-1 rounded-md border border-slate-200/50">
               India&apos;s Local Search Index
             </span>
           </div>
@@ -150,18 +150,18 @@ export default function Navbar({
 
       {/* Mobile Menu Panel */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-4 animate-in fade-in slide-in-from-top-3 duration-200">
-          <div className="space-y-2">
-            <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider">Select Location</label>
-            <div className="flex items-center bg-slate-50 border border-slate-200 rounded-lg p-2.5">
-              <MapPin className="h-4 w-4 text-orange-500 mr-2 flex-shrink-0" />
+        <div className="md:hidden border-t border-slate-100 bg-white/95 backdrop-blur-xl px-5 py-6 space-y-6 animate-in slide-in-from-top-4 duration-300 shadow-2xl absolute w-full left-0 border-b border-slate-200 z-50">
+          <div className="space-y-2.5">
+            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest">Select Location</label>
+            <div className="flex items-center bg-slate-50 border border-slate-200/80 rounded-2xl p-3 focus-within:ring-2 focus-within:ring-blue-100 focus-within:border-blue-500 transition-all">
+              <MapPin className="h-4.5 w-4.5 text-orange-500 mr-2 flex-shrink-0" />
               <select
                 value={selectedCity}
                 onChange={(e) => {
                   onCityChange(e.target.value);
                   setMobileMenuOpen(false);
                 }}
-                className="bg-transparent border-none text-sm font-semibold focus:ring-0 text-slate-700 w-full"
+                className="bg-transparent border-none text-sm font-bold focus:ring-0 text-slate-700 w-full focus:outline-none"
               >
                 {CITIES.map((city) => (
                   <option key={city} value={city}>
@@ -172,27 +172,27 @@ export default function Navbar({
             </div>
           </div>
 
-          <div className="space-y-2">
-            <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider">Search Keywords</label>
-            <div className="flex items-center bg-slate-50 border border-slate-200 rounded-lg p-2.5">
-              <Search className="h-4 w-4 text-slate-400 mr-2 flex-shrink-0" />
+          <div className="space-y-2.5">
+            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest">Search Keywords</label>
+            <div className="flex items-center bg-slate-50 border border-slate-200/80 rounded-2xl p-3 focus-within:ring-2 focus-within:ring-blue-100 focus-within:border-blue-500 transition-all">
+              <Search className="h-4.5 w-4.5 text-slate-400 mr-2 flex-shrink-0" />
               <input
                 type="text"
                 placeholder="Plumber, Dentist, Spa, School..."
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}
-                className="bg-transparent border-none w-full text-sm focus:ring-0 text-slate-700"
+                className="bg-transparent border-none w-full text-sm focus:ring-0 text-slate-700 font-medium focus:outline-none placeholder:text-slate-400"
               />
             </div>
           </div>
 
-          <div className="pt-2 flex flex-col gap-2">
+          <div className="pt-4 flex flex-col gap-3">
             <button
               onClick={() => {
                 onMyEnquiriesClick();
                 setMobileMenuOpen(false);
               }}
-              className="w-full py-2.5 text-center text-sm font-semibold text-slate-700 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer"
+              className="w-full py-3.5 text-center text-sm font-bold text-slate-700 border border-slate-200 rounded-2xl hover:bg-slate-50 active:bg-slate-100 cursor-pointer transition-all"
             >
               My Enquiries
             </button>
@@ -201,7 +201,7 @@ export default function Navbar({
                 onAddBusinessClick();
                 setMobileMenuOpen(false);
               }}
-              className="w-full bg-blue-600 text-white font-semibold text-sm py-2.5 rounded-lg text-center hover:bg-blue-700 shadow-sm cursor-pointer"
+              className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold text-sm py-3.5 rounded-2xl text-center hover:shadow-lg hover:shadow-blue-500/20 active:scale-95 cursor-pointer transition-all"
             >
               Add Business Listing
             </button>
@@ -211,7 +211,7 @@ export default function Navbar({
                   onLogout();
                   setMobileMenuOpen(false);
                 }}
-                className="w-full py-2.5 text-center text-sm font-semibold text-red-600 hover:bg-red-50 rounded-lg cursor-pointer"
+                className="w-full py-3.5 text-center text-sm font-bold text-red-600 bg-red-50 hover:bg-red-100 border border-red-100 rounded-2xl cursor-pointer transition-all"
               >
                 Logout ({user.name})
               </button>

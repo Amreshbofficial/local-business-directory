@@ -54,7 +54,7 @@ export default function MiniMap({
   }, [routeBusiness]);
 
   return (
-    <div className="bg-white border border-slate-150 rounded-2xl shadow-sm overflow-hidden flex flex-col h-full min-h-[460px] lg:sticky lg:top-20" id="mock-map-canvas-root">
+    <div className="bg-white border border-slate-150 rounded-2xl shadow-sm overflow-hidden flex flex-col h-full min-h-[300px] lg:min-h-[460px] lg:sticky lg:top-20" id="mock-map-canvas-root">
       
       {/* Map head */}
       <div className="bg-slate-50 px-4 py-3 border-b border-slate-100 flex items-center justify-between select-none">

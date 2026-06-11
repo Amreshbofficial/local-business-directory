@@ -192,24 +192,24 @@ export default function AddBusinessModal({ onClose, onAddBusiness, currentCity }
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">Business Name *</label>
+                <label className="block text-[10px] font-black text-slate-500 mb-1.5 uppercase tracking-widest">Business Name *</label>
                 <input
                   type="text"
                   required
                   placeholder="e.g. Divine Car Care & Detailing Garage"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-100 focus:border-blue-500 focus:outline-none"
+                  className="w-full px-4 py-3 bg-slate-50/50 border border-slate-200/80 rounded-2xl text-sm font-semibold text-slate-800 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400 placeholder:font-medium"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">Primary Category</label>
+                  <label className="block text-[10px] font-black text-slate-500 mb-1.5 uppercase tracking-widest">Primary Category</label>
                   <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs bg-white focus:ring-2 focus:ring-blue-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-white border border-slate-200/80 rounded-2xl text-sm font-semibold text-slate-800 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:outline-none transition-all"
                   >
                     {CATEGORIES.map((cat) => (
                       <option key={cat.id} value={cat.id}>
@@ -220,11 +220,11 @@ export default function AddBusinessModal({ onClose, onAddBusiness, currentCity }
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">City</label>
+                  <label className="block text-[10px] font-black text-slate-500 mb-1.5 uppercase tracking-widest">City</label>
                   <select
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
-                    className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs bg-white focus:ring-2 focus:ring-blue-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-white border border-slate-200/80 rounded-2xl text-sm font-semibold text-slate-800 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:outline-none transition-all"
                   >
                     {CITIES.map((c) => (
                       <option key={c} value={c}>
@@ -236,26 +236,26 @@ export default function AddBusinessModal({ onClose, onAddBusiness, currentCity }
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">Area / Locality *</label>
+                <label className="block text-[10px] font-black text-slate-500 mb-1.5 uppercase tracking-widest">Area / Locality *</label>
                 <input
                   type="text"
                   required
                   placeholder="e.g. Koramangala 4th Block, West End Rd"
                   value={area}
                   onChange={(e) => setArea(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-100 focus:border-blue-500 focus:outline-none"
+                  className="w-full px-4 py-3 bg-slate-50/50 border border-slate-200/80 rounded-2xl text-sm font-semibold text-slate-800 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400 placeholder:font-medium"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">Detailed Full Address *</label>
+                <label className="block text-[10px] font-black text-slate-500 mb-1.5 uppercase tracking-widest">Detailed Full Address *</label>
                 <textarea
                   required
                   rows={2}
                   placeholder="e.g. Shop No. 12, Ground Floor, Signature Mall, Plot 4"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-100 focus:border-blue-500 focus:outline-none resize-none"
+                  className="w-full px-4 py-3 bg-slate-50/50 border border-slate-200/80 rounded-2xl text-sm font-semibold text-slate-800 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400 placeholder:font-medium resize-none"
                 />
               </div>
             </div>
@@ -270,72 +270,72 @@ export default function AddBusinessModal({ onClose, onAddBusiness, currentCity }
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">Primary Phone Number *</label>
+                  <label className="block text-[10px] font-black text-slate-500 mb-1.5 uppercase tracking-widest">Primary Phone Number *</label>
                   <input
                     type="tel"
                     required
                     placeholder="e.g. +91 98888 77777"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-slate-50/50 border border-slate-200/80 rounded-2xl text-sm font-semibold text-slate-800 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400 placeholder:font-medium"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">WhatsApp Number (Optional)</label>
+                  <label className="block text-[10px] font-black text-slate-500 mb-1.5 uppercase tracking-widest">WhatsApp Number (Optional)</label>
                   <input
                     type="tel"
                     placeholder="e.g. +91 98888 77777"
                     value={whatsapp}
                     onChange={(e) => setWhatsapp(e.target.value)}
-                    className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-slate-50/50 border border-slate-200/80 rounded-2xl text-sm font-semibold text-slate-800 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400 placeholder:font-medium"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">Email ID (Optional)</label>
+                  <label className="block text-[10px] font-black text-slate-500 mb-1.5 uppercase tracking-widest">Email ID (Optional)</label>
                   <input
                     type="email"
                     placeholder="e.g. business@domain.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-slate-50/50 border border-slate-200/80 rounded-2xl text-sm font-semibold text-slate-800 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400 placeholder:font-medium"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">Website URL (Optional)</label>
+                  <label className="block text-[10px] font-black text-slate-500 mb-1.5 uppercase tracking-widest">Website URL (Optional)</label>
                   <input
                     type="url"
                     placeholder="e.g. https://domain.com"
                     value={website}
                     onChange={(e) => setWebsite(e.target.value)}
-                    className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-slate-50/50 border border-slate-200/80 rounded-2xl text-sm font-semibold text-slate-800 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400 placeholder:font-medium"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">Operating Hours / Timings</label>
+                <label className="block text-[10px] font-black text-slate-500 mb-1.5 uppercase tracking-widest">Operating Hours / Timings</label>
                 <input
                   type="text"
                   placeholder="e.g. Open • Closes 9:30 PM"
                   value={timing}
                   onChange={(e) => setTiming(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-100 focus:border-blue-500 focus:outline-none"
+                  className="w-full px-4 py-3 bg-slate-50/50 border border-slate-200/80 rounded-2xl text-sm font-semibold text-slate-800 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400 placeholder:font-medium"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">Short Business Description (Optional)</label>
+                <label className="block text-[10px] font-black text-slate-500 mb-1.5 uppercase tracking-widest">Short Business Description (Optional)</label>
                 <textarea
                   rows={2}
                   placeholder="Introduce your specializations, highlights, achievements..."
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-100 focus:border-blue-500 focus:outline-none resize-none"
+                  className="w-full px-4 py-3 bg-slate-50/50 border border-slate-200/80 rounded-2xl text-sm font-semibold text-slate-800 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400 placeholder:font-medium resize-none"
                 />
               </div>
             </div>
@@ -375,7 +375,7 @@ export default function AddBusinessModal({ onClose, onAddBusiness, currentCity }
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">Add SEO Tags / Keywords</label>
+                <label className="block text-[10px] font-black text-slate-500 mb-1.5 uppercase tracking-widest">Add SEO Tags / Keywords</label>
                 <div className="flex gap-2">
                   <input
                     type="text"
@@ -383,7 +383,7 @@ export default function AddBusinessModal({ onClose, onAddBusiness, currentCity }
                     value={tagInput}
                     onChange={(e) => setTagInput(e.target.value)}
                     onKeyDown={handleAddTag}
-                    className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-slate-50/50 border border-slate-200/80 rounded-2xl text-sm font-semibold text-slate-800 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400 placeholder:font-medium"
                   />
                   <button
                     type="button"

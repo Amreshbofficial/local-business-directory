@@ -247,32 +247,32 @@ export default function App() {
       )}
 
       {/* Hero Header Presentation */}
-      <header className="relative bg-gradient-to-b from-blue-900 via-indigo-900 to-slate-900 py-12 px-4 shadow-inner overflow-hidden select-none">
+      <header className="relative bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 py-16 md:py-20 px-4 md:px-8 overflow-hidden select-none border-b border-white/5">
         
         {/* Soft background glow objects */}
-        <div className="absolute top-0 right-1/4 h-56 w-56 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-10 h-44 w-44 rounded-full bg-orange-500/10 blur-2xl pointer-events-none" />
+        <div className="absolute top-0 right-1/4 h-96 w-96 rounded-full bg-blue-600/20 blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-0 left-10 h-72 w-72 rounded-full bg-orange-500/20 blur-[80px] pointer-events-none" />
 
-        <div className="max-w-4xl mx-auto text-center relative z-10 space-y-4">
-          <div className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10 text-white text-[11px] font-semibold tracking-wide">
-            <Sparkles className="h-3.5 w-3.5 text-orange-400 animate-pulse" />
-            <span>Connecting Millions directly with verified service merchants</span>
+        <div className="max-w-5xl mx-auto text-center relative z-10 space-y-6">
+          <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-xl px-4 py-2 rounded-full border border-white/10 text-slate-200 text-xs font-bold tracking-wider shadow-xl">
+            <Sparkles className="h-4 w-4 text-orange-400 animate-pulse" />
+            <span>Connecting Millions with Premium Services</span>
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-tight space-y-1">
-            <span>Find Verified Local Services in </span>
-            <span className="bg-gradient-to-r from-orange-400 via-amber-300 to-indigo-300 bg-clip-text text-transparent underline decoration-orange-500/30 decoration-wavy">
+          <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight leading-[1.15]">
+            <span className="block mb-2">Find Verified Local Services in </span>
+            <span className="bg-gradient-to-r from-orange-400 via-amber-300 to-yellow-200 bg-clip-text text-transparent underline decoration-orange-500/30 decoration-wavy inline-block pb-2">
               {selectedCity}
             </span>
           </h1>
 
-          <p className="text-xs md:text-sm text-slate-300 font-medium max-w-xl mx-auto leading-relaxed">
-            Instantly connect with top plumbers, fine-dine hotels, specialists, packers and movers, salons, or diagnostic clinics nearby.
+          <p className="text-sm md:text-base text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
+            Instantly connect with top-rated plumbers, fine-dine hotels, specialists, packers and movers, salons, or diagnostic clinics nearby.
           </p>
 
           {/* Quick trending actions index */}
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-3">
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mr-1">Trending:</span>
+          <div className="flex flex-wrap items-center justify-center gap-2.5 pt-6">
+            <span className="text-xs font-extrabold text-slate-400 uppercase tracking-widest mr-2 hidden sm:block">Trending Now:</span>
             {TRENDING_KEYWORDS.map((key, idx) => (
               <button
                 key={idx}
@@ -281,10 +281,10 @@ export default function App() {
                   setSelectedCategory(key.category);
                   setSearchQuery(key.text);
                 }}
-                className="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 hover:scale-103 rounded-full text-[10px] font-semibold text-slate-200 px-3 py-1 cursor-pointer transition-all flex items-center gap-1"
+                className="group bg-white/5 hover:bg-white/15 border border-white/10 hover:border-white/30 hover:-translate-y-1 rounded-full text-[11px] sm:text-xs font-bold text-slate-200 px-4 py-2 cursor-pointer transition-all duration-300 shadow-lg flex items-center gap-1.5 backdrop-blur-sm"
               >
                 <span>{key.label}</span>
-                <ArrowUpRight className="h-2.5 w-2.5 text-slate-400" />
+                <ArrowUpRight className="h-3.5 w-3.5 text-slate-400 group-hover:text-white transition-colors" />
               </button>
             ))}
           </div>
@@ -606,38 +606,38 @@ export default function App() {
 
       {/* 4. User Sign In Modal */}
       {authModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-100 flex flex-col relative animate-in zoom-in-95 duration-200">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md animate-in fade-in duration-200">
+          <div className="bg-white/95 backdrop-blur-xl rounded-3xl max-w-sm w-full p-8 shadow-2xl border border-white/20 flex flex-col relative animate-in zoom-in-95 duration-200">
             <button
               onClick={() => setAuthModalOpen(false)}
-              className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 cursor-pointer p-1"
+              className="absolute top-4 right-4 text-slate-400 hover:text-slate-800 bg-slate-100/50 hover:bg-slate-200 p-2 rounded-full cursor-pointer transition-all"
             >
-              <X className="h-5 w-5" />
+              <X className="h-4.5 w-4.5" />
             </button>
 
-            <div className="text-center mb-6">
-              <div className="inline-flex h-12 w-12 items-center justify-center bg-blue-50 rounded-full text-blue-600 mb-3">
-                <Star className="h-6 w-6" />
+            <div className="text-center mb-8">
+              <div className="inline-flex h-14 w-14 items-center justify-center bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-2xl text-white mb-4 shadow-lg shadow-blue-500/30 ring-4 ring-blue-50">
+                <Star className="h-7 w-7" />
               </div>
-              <h3 className="text-lg font-bold text-slate-800">Quick Sign In</h3>
-              <p className="text-xs text-slate-500 mt-1">Get custom enquiry updates and rate local businesses</p>
+              <h3 className="text-xl font-extrabold text-slate-800 tracking-tight">Welcome Back</h3>
+              <p className="text-xs text-slate-500 mt-1.5 font-medium leading-relaxed">Sign in to track enquiries & review businesses securely</p>
             </div>
 
-            <form onSubmit={handleLogin} className="space-y-4">
+            <form onSubmit={handleLogin} className="space-y-5">
               <div>
-                <label className="block text-xs font-bold text-slate-600 mb-1">Your Full Name</label>
+                <label className="block text-[10px] font-black text-slate-500 mb-1.5 uppercase tracking-widest">Your Full Name</label>
                 <input
                   type="text"
                   required
-                  placeholder="Enter full name"
+                  placeholder="e.g. John Doe"
                   value={usernameInput}
                   onChange={(e) => setUsernameInput(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-100 focus:border-blue-500 focus:outline-none"
+                  className="w-full px-4 py-3 bg-slate-50/50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400 placeholder:font-medium"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-600 mb-1">Mobile Number</label>
+                <label className="block text-[10px] font-black text-slate-500 mb-1.5 uppercase tracking-widest">Mobile Number</label>
                 <input
                   type="tel"
                   required
@@ -648,15 +648,16 @@ export default function App() {
                     const clean = e.target.value.replace(/\D/g, '');
                     setPhoneInput(clean.slice(0, 10));
                   }}
-                  className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-100 focus:border-blue-500 focus:outline-none"
+                  className="w-full px-4 py-3 bg-slate-50/50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400 placeholder:font-medium"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold text-xs py-2.5 rounded-xl transition-all hover:from-blue-700 hover:to-indigo-700 shadow-md shadow-blue-500/10 cursor-pointer"
+                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold text-sm py-3.5 rounded-2xl transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-blue-500/20 active:translate-y-0 cursor-pointer flex items-center justify-center gap-2 mt-2"
               >
-                Sign In Securely
+                <span>Continue Securely</span>
+                <ChevronRight className="h-4 w-4" />
               </button>
             </form>
           </div>

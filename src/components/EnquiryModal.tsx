@@ -66,23 +66,22 @@ export default function EnquiryModal({ business, onClose, onSubmitEnquiry, curre
               <p className="text-xs text-blue-100 mt-1 line-clamp-1">{business.address}</p>
             </div>
 
-            {/* Form body */}
-            <div className="p-6 space-y-4">
+            <div className="p-6 space-y-5">
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">Your Full Name *</label>
+                <label className="block text-[10px] font-black text-slate-500 mb-1.5 uppercase tracking-widest">Your Full Name *</label>
                 <input
                   type="text"
                   required
                   placeholder="Enter full name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-100 focus:border-blue-500 focus:outline-none"
+                  className="w-full px-4 py-3 bg-slate-50/50 border border-slate-200/80 rounded-2xl text-sm font-semibold text-slate-800 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400 placeholder:font-medium"
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">Mobile Number *</label>
+                  <label className="block text-[10px] font-black text-slate-500 mb-1.5 uppercase tracking-widest">Mobile Number *</label>
                   <input
                     type="tel"
                     required
@@ -93,29 +92,29 @@ export default function EnquiryModal({ business, onClose, onSubmitEnquiry, curre
                       const clean = e.target.value.replace(/\D/g, '');
                       setPhone(clean.slice(0, 10));
                     }}
-                    className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-slate-50/50 border border-slate-200/80 rounded-2xl text-sm font-semibold text-slate-800 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400 placeholder:font-medium"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">Email ID (Optional)</label>
+                  <label className="block text-[10px] font-black text-slate-500 mb-1.5 uppercase tracking-widest">Email ID (Optional)</label>
                   <input
                     type="email"
                     placeholder="name@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-100 focus:border-blue-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-slate-50/50 border border-slate-200/80 rounded-2xl text-sm font-semibold text-slate-800 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400 placeholder:font-medium"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">Requirement / Questions</label>
+                <label className="block text-[10px] font-black text-slate-500 mb-1.5 uppercase tracking-widest">Requirement / Questions</label>
                 <textarea
                   rows={3}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-100 focus:border-blue-500 focus:outline-none resize-none"
+                  className="w-full px-4 py-3 bg-slate-50/50 border border-slate-200/80 rounded-2xl text-sm font-semibold text-slate-800 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400 placeholder:font-medium resize-none"
                 />
               </div>
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, MessageSquare, Phone, Globe, ShieldCheck, Clock, Check, StarOff, Send, Navigation } from 'lucide-react';
+import { Star, MessageSquare, Phone, Globe, ShieldCheck, Clock, Check, StarOff, Send, Navigation, MapPin } from 'lucide-react';
 import { Business, Review } from '../types';
 
 interface ListingCardProps {
@@ -58,8 +58,8 @@ export default function ListingCard({
   return (
     <div
       onClick={onSelect}
-      className={`bg-white rounded-3xl border transition-all duration-300 overflow-hidden flex flex-col md:flex-row shadow-sm hover:shadow-md cursor-pointer ${
-        isSelected ? 'border-blue-500 ring-2 ring-blue-100' : 'border-slate-100 hover:border-slate-200'
+      className={`group bg-white rounded-3xl border transition-all duration-300 overflow-hidden flex flex-col md:flex-row hover:shadow-xl hover:-translate-y-1 cursor-pointer relative ${
+        isSelected ? 'border-blue-500 ring-4 ring-blue-50 shadow-lg' : 'border-slate-100/80 hover:border-blue-200 shadow-sm'
       }`}
       id={`listing-card-${business.id}`}
     >
@@ -87,8 +87,10 @@ export default function ListingCard({
         </div>
 
         {/* Category Label badge bottom Overlay */}
-        <div className="absolute bottom-3 left-3 bg-slate-900/40 backdrop-blur-sm px-2.5 py-0.5 rounded text-[9px] text-white font-bold tracking-wider uppercase">
-          {business.category}
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent p-4 pt-12 flex items-end">
+          <span className="bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-md text-[9px] text-white font-black tracking-widest uppercase border border-white/10 shadow-sm">
+            {business.category}
+          </span>
         </div>
       </div>
 
@@ -99,10 +101,13 @@ export default function ListingCard({
           {/* Header Title Grid Row */}
           <div className="flex items-start justify-between gap-2">
             <div className="flex-1">
-              <h3 className="text-sm font-extrabold text-slate-800 tracking-tight leading-snug cursor-pointer hover:text-blue-600" onClick={onSelect}>
+              <h3 className="text-base sm:text-lg font-black text-slate-800 tracking-tight leading-snug cursor-pointer group-hover:text-blue-600 transition-colors" onClick={onSelect}>
                 {business.name}
               </h3>
-              <p className="text-[10px] text-slate-400 font-bold tracking-tight mt-0.5">{business.area}, {business.city}</p>
+              <p className="text-[10px] sm:text-xs text-slate-400 font-bold tracking-wide mt-0.5 uppercase">
+                <MapPin className="h-3 w-3 inline mr-1 text-slate-300" />
+                {business.area}, {business.city}
+              </p>
             </div>
             {/* Rating Metric display */}
             <div className="text-right flex-shrink-0 flex items-center bg-blue-50/50 hover:bg-blue-50 p-2 rounded-2xl border border-blue-100 flex-col gap-0.5 select-none font-sans justify-center min-w-[54px]">
@@ -165,7 +170,7 @@ export default function ListingCard({
 
         {/* Primary Interactive buttons block */}
         <div className="mt-5 pt-4 border-t border-slate-50 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
-          <div className="flex items-center gap-1.5">
+          <div className="flex flex-wrap items-center gap-2">
             {/* Show/Hide Phone button logic directly inside */}
             <button
               onClick={() => setShowPhone(!showPhone)}
