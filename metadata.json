@@ -1,0 +1,6 @@
+{
+  "name": "Local Business Directory",
+  "description": "A comprehensive local search engine and business directory platform inspired by Justdial, featuring categories, filters, business listings, maps, user reviews, and active enquiry flow.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
